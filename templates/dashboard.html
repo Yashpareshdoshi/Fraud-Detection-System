@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card" style="max-width: 550px;">
+        <h2>Intelligence Hub</h2>
+        
+        <div class="dashboard">
+            <div class="stat-box">
+                <span style="font-size: 11px; color: #888;">NETWORK_VOL</span>
+                <h2 class="stat-blue">{{ total }}</h2>
+                <p style="font-size: 9px; color: var(--neon-cyan);">TOTAL_TX</p>
+            </div>
+            
+            <div class="stat-box" style="border-left-color: var(--neon-red);">
+                <span style="font-size: 11px; color: #888;">THREAT_NEUT</span>
+                <h2 class="stat-red">{{ frauds }}</h2>
+                <p style="font-size: 9px; color: var(--neon-red);">BLOCKS_ACTIVE</p>
+            </div>
+        </div>
+
+        <a href="/home" class="btn-secondary">⬅ Return to Terminal</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Threat Alerts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card" style="max-width: 500px;">
+        <h2>Threat Log</h2>
+        
+        <div style="text-align: left; height: 250px; overflow-y: auto; background: rgba(0,0,0,0.5); padding: 15px; border: 1px solid #222; margin: 15px 0;">
+            {% for alert in alerts %}
+                <p style="font-family: monospace; font-size: 13px; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px;">
+                    <span style="color: var(--neon-red);">[ALERT]</span> {{ alert[0] }} <br>
+                    <span style="color: #666;">MSG:</span> {{ alert[1] }}
+                </p>
+            {% endfor %}
+        </div>
+
+        <a href="/home" class="btn-secondary">Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Identity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>New Identity</h2>
+        <p style="font-size: 10px; color: var(--neon-cyan); margin-bottom: 20px;">[ CREATING SECURE NODE ]</p>
+        
+        <form method="POST">
+            <input type="text" name="username" placeholder="CHOOSE_ID" required>
+            <input type="password" name="password" placeholder="ASSIGN_KEY" required>
+            <button>Register Node</button>
+        </form>
+        
+        <a href="/login">Back to Login</a>
+    </div>
+</body>
+</html>

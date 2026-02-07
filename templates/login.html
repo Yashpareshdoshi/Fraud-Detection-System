@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terminal Access</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Terminal Access</h2>
+        <p style="font-size: 10px; color: var(--neon-pink); margin-bottom: 20px;">[ STATUS: ENCRYPTION ACTIVE ]</p>
+        
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="OPERATOR_ID" required>
+            <input type="password" name="password" placeholder="ACCESS_KEY" required>
+            <button>Authorize</button>
+        </form>
+        
+        <div class="register-link">
+            <a href="/register">Initialize New Identity</a>
+        </div>
+    </div>
+</body>
+</html>

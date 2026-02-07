@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2>Node Transfer</h2>
+        <p style="font-size: 11px; color: #888; margin-bottom: 20px;">PROTOCOL: X-CREDIT-UPLINK</p>
+        
+        <form action="/transfer" method="POST">
+            <input type="text" name="receiver" placeholder="TARGET_ID" required>
+            <input type="number" name="amount" placeholder="CREDIT_AMOUNT (USD)" required>
+            <button type="submit">Execute Transfer</button>
+        </form>
+        
+        <div style="margin-top: 30px; display: flex; justify-content: space-between;">
+            <a href="/alerts" style="color: var(--neon-red);">⚠ Logs</a>
+            <a href="/dashboard" style="color: var(--neon-cyan);">📊 Stats</a>
+        </div>
+    </div>
+</body>
+</html>
