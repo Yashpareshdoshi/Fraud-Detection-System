@@ -23,7 +23,12 @@ for _ in range(7000):
     is_night = 1 if hour >= 23 or hour <= 6 else 0
 
     # Fraud logic (for training labels)
-    fraud = 1 if distance > 4000 or is_night or amount > 80000 else 0
+    fraud = 1 if (
+    (distance > 4000 and is_night) or
+    (amount > 90000 and distance > 1000) or
+    (is_night and amount > 70000)
+) else 0
+
 
     data.append([amount, distance, hour, is_night, fraud])
 
