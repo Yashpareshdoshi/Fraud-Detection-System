@@ -1,106 +1,82 @@
 # Fraud-Detection-System
-An advanced real-time transaction risk analysis and fraud detection dashboard designed to simulate modern banking security architecture. Built to model transaction behavior, validate risk constraints, and generate intelligent fraud decisions using a hybrid ML + rule-based engine.
+An advanced real-time transaction fraud detection system that simulates modern banking security architecture.
+The system combines Machine Learning with rule-based risk evaluation to analyze transaction behavior, validate security constraints, and generate intelligent fraud decisions.
 
-🚀 Tech Stack
+Overview
 
-Backend: Python, Flask
-Machine Learning: Scikit-learn (Fraud Probability Model)
-Risk Engine: Custom Weighted Scoring System
-Geo Analytics: Haversine Formula (Distance Calculation), IP-based Location Tracking
-Database: SQL (Transaction Logging & Alert Storage)
-Frontend: HTML, CSS, Bootstrap
-Security Simulation: Multi-layer Risk Enforcement Engine
+Traditional fraud detection systems rely either on static rules or standalone machine learning models. This project implements a hybrid approach that integrates ML-based fraud probability with real-world banking risk policies such as geo-velocity checks, transaction limits, and behavioral anomaly detection.
 
-🛠 Core Features
-💳 Transaction Risk Engine
+The system classifies transactions into Approved, Alert, or Blocked categories based on a dynamically calculated risk score.
 
-Evaluates transactions using ML fraud probability combined with real-world banking constraints.
+Key Features
+1. Hybrid Fraud Detection Engine
+Combines Machine Learning prediction with rule-based banking constraints for realistic risk evaluation.
 
-🌍 Geo-Location Intelligence
+2. Machine Learning Risk Prediction
+Generates a base fraud probability score using transaction-related features.
 
-Detects transaction origin using IP tracking and calculates geographic variance.
+3. Geo-Location Tracking
+Detects transaction origin using IP-based location mapping and extracts latitude and longitude.
 
-✈️ Geo-Velocity (Impossible Travel) Detection
+4. Distance & Geo-Velocity Detection
+Uses the Haversine formula to calculate distance between transactions and detects unrealistic travel speeds (impossible travel).
 
-Validates travel speed between consecutive transactions.
-Flags unrealistic travel (>900 km/h) as high risk.
+5. Amount-Based Risk Assessment
+Applies dynamic risk weighting based on transaction amount and enforces maximum transaction limits.
 
-📊 Weighted Risk Scoring Model
+6. Time-Based Behavioral Analysis
+Identifies higher risk for transactions occurring during unusual hours.
 
-Combines:
+7. Weighted Risk Scoring Model
+Aggregates multiple risk factors including:
+ML fraud probability
+Transaction amount
+Location variance
+Travel speed
+Time-of-day behavior
 
-ML Fraud Probability
+8. Multi-Level Decision Engine
+Risk < 50 → Approved
+Risk 50–79 → Alert
+Risk ≥ 80 → Blocked
 
-Transaction Amount
+9. Real-Time Alert System
+Automatically generates and stores alerts for suspicious transactions.
 
-Location Shift
+10. Transaction Logging & Audit Trail
+Stores transaction details including risk score, decision, IP address, location, and timestamp for analysis and monitoring.
 
-Travel Speed
+Tech Stack:
+Backend
+Python
+Flask
+Machine Learning
+Scikit-learn
+Database
+SQL (Transaction & Alert Storage)
+Geo Analytics
+Haversine Formula
+IP-based Location Tracking
+Frontend
+HTML
+CSS
+Bootstrap
 
-Time-of-Day Behavior
+Workflow
 
-🚦 Go / Alert / Block Decision Engine
+User submits transaction details.
+System captures IP location.
+Distance and travel speed are calculated.
+ML model predicts fraud probability.
+Rule-based engine calculates additional risk.
+Final weighted risk score is generated.
+Transaction is classified as Approved, Alert, or Blocked.
+Transaction details are stored in the database.
 
-Low Risk → Approved
+Future Enhancements
 
-Medium Risk → Alert Generated
-
-High Risk → Automatically Blocked
-
-🌙 Behavioral Time Analysis
-
-Identifies high-risk night transactions (10 PM – 6 AM).
-
-🗄 Audit & Telemetry Logging
-
-Stores:
-
-Risk Score
-
-Decision
-
-IP Address
-
-Location
-
-Timestamp
-
-Transaction Metadata
-
-🔔 Real-Time Alert System
-
-Generates fraud alerts for suspicious activities.
-
-📈 Risk Governance Model
-
-Structural Limits Simulated:
-
-Maximum transaction threshold enforcement
-
-Speed constraint validation (Geo-Velocity)
-
-Risk cap thresholds (50 / 80 decision boundary)
-
-This mimics real-world fintech fraud governance frameworks.
-
-🔬 Intelligence Layer
-
-The ML model provides base fraud probability, while the rule-based engine enhances contextual accuracy.
-
-This hybrid approach reflects how real banking institutions perform:
-
-Risk-based authentication
-
-Behavioral fraud detection
-
-Multi-layer transaction security
-
-📚 References
-
-Banking Risk-Based Authentication Frameworks
-
-Anti-Money Laundering (AML) Transaction Monitoring Systems
-
-Geo-Velocity Fraud Detection Models
-
-Payment Card Industry (PCI DSS) Security Concepts
+Email/SMS notification system
+Advanced deep learning models
+Real-time payment gateway integration
+Behavioral profiling using historical data
+Analytics dashboard for fraud trends Industry (PCI DSS) Security Concepts
