@@ -11,15 +11,14 @@
         <div style="height: 2px; background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); margin-bottom: 20px;"></div>
         
         <p><b>Verification:</b> 
-            <span class="{{ 'fraud' if result.status == 'Fraud' else 'safe' }}">
-                {{ result.status.upper() }}
+            <span class="{{ 'fraud' if decision == 'BLOCKED' else 'safe' }}">
+                {{ decision }}
             </span>
         </p>
 
-        <div class="alert {{ 'border-fraud' if result.status == 'Fraud' else 'border-safe' }}">
-            <p>Risk Score: <strong>{{ risk|round(2) }}%</strong></p>
-            <p>Location Variance: {{ result.distance_km }} km</p>
-            <p>Vector: {{ 'Night Shift' if result.night_transaction else 'Daylight' }}</p>
+        <div class="alert {{ 'border-fraud' if decision == 'BLOCKED' else 'border-safe' }}">
+            <p>Risk Score: <strong>{{ risk }}%</strong></p>
+            <p>Reason: {{ reason }}</p>
         </div>
 
         <div style="margin-top: 25px;">
