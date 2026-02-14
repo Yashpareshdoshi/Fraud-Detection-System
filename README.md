@@ -28,16 +28,25 @@ Applies dynamic risk weighting based on transaction amount and enforces maximum 
 Identifies higher risk for transactions occurring during unusual hours.
 
 7. Weighted Risk Scoring Model
+
 Aggregates multiple risk factors including:
+
 ML fraud probability
+
 Transaction amount
+
 Location variance
+
 Travel speed
+
 Time-of-day behavior
 
 8. Multi-Level Decision Engine
+
 Risk < 50 → Approved
+
 Risk 50–79 → Alert
+
 Risk ≥ 80 → Blocked
 
 9. Real-Time Alert System
@@ -47,36 +56,61 @@ Automatically generates and stores alerts for suspicious transactions.
 Stores transaction details including risk score, decision, IP address, location, and timestamp for analysis and monitoring.
 
 Tech Stack:
+
 Backend
+
 Python
+
 Flask
+
 Machine Learning
+
 Scikit-learn
+
 Database
+
 SQL (Transaction & Alert Storage)
+
 Geo Analytics
+
 Haversine Formula
+
 IP-based Location Tracking
+
 Frontend
+
 HTML
+
 CSS
+
 Bootstrap
 
 Workflow
 
 User submits transaction details.
+
 System captures IP location.
+
 Distance and travel speed are calculated.
+
 ML model predicts fraud probability.
+
 Rule-based engine calculates additional risk.
+
 Final weighted risk score is generated.
+
 Transaction is classified as Approved, Alert, or Blocked.
+
 Transaction details are stored in the database.
 
 Future Enhancements
 
 Email/SMS notification system
+
 Advanced deep learning models
+
 Real-time payment gateway integration
+
 Behavioral profiling using historical data
+
 Analytics dashboard for fraud trends Industry (PCI DSS) Security Concepts
